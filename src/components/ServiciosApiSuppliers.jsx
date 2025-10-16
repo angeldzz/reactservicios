@@ -5,11 +5,15 @@ export default class ServiciosApiSuppliers extends Component {
     cajaID = React.createRef();
     state = {
         nombres: [],
+        suppliers:{},
         supplier: {}
     }
     componentDidMount = () => {
         let nombresAux = [];
         axios.get(this.url).then(response => {
+            this.setState({
+                suppliers:response.data
+            })
             response.data.value.forEach(cliente => {
                 nombresAux.push(cliente.ContactName)
                 this.setState({
@@ -20,15 +24,13 @@ export default class ServiciosApiSuppliers extends Component {
         
     }
     buscarSupplier = () => {
-        axios.get(this.url).then(response => {
-            response.data.value.forEach(cliente => {
+            this.state.suppliers.value.forEach(cliente => {
                 if (cliente.SupplierID == this.cajaID.current.value) {
                     this.setState({
                         supplier: cliente
                     })
                 }
             });
-        })
     }
     render() {
         return (
@@ -42,9 +44,7 @@ export default class ServiciosApiSuppliers extends Component {
                 <h6>{this.state.supplier.ContactTitle} / {this.state.supplier.Fax} / {this.state.supplier.Phone}</h6>
                 {this.state.nombres.map((nombre,index)=>{
                     return(
-                        <div>
                             <p key={index}>{nombre}</p>
-                        </div>
                     )
                 })}
             </div>
