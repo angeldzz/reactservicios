@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Global from '../Global';
 export default class ServiciosApiSuppliers extends Component {
-    url = "https://services.odata.org/V4/Northwind/Northwind.svc/Suppliers"
+    request = "suppliers"
+    url = Global.urlNorthwind + this.request
     cajaID = React.createRef();
     state = {
         nombres: [],
