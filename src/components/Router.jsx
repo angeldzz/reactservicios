@@ -3,6 +3,7 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Home from './Home';
 import NotFound from './NotFound';
 import TablaMultiplicar from './TablaMultiplicar';
+import Collatz from "./Collatz";
 import { useParams } from "react-router-dom";
 export default class Router extends Component {
   render() {
@@ -14,11 +15,16 @@ export default class Router extends Component {
         //Devolvemos el componente tabla multiplicar con sus props
         return <TablaMultiplicar numero={minumero}/>
     }
+    function CollatzElement () {
+      let {numcollatz} = useParams()
+      return <Collatz numCollatz={numcollatz}/>
+    }
     return (
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/tabla/:minumero' element={<TablaMultiplicarElement/>}/>
+        <Route path='/collatz/:numcollatz' element={<CollatzElement/>}/>
         {/* Para las rutas que no existen debemos utilizar el * y debe ser siempre la ultima ruta */}
         <Route path='*' element={<NotFound/>}/>
       </Routes>
