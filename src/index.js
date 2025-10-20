@@ -2,22 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import ServiciosApiCustomers from './components/ServiciosApiCustomers';
-import ServiciosApiSuppliers from './components/ServiciosApiSuppliers';
-import EmpleadosDepartamento from './components/EmpleadosDepartamento';
-import EmpleadosOficios from './components/EmpleadosOficios';
-import Departamento from './components/maestrodetalle/Departamento';
-import Cursos from './components/ejemplocomunicacion/Cursos';
+// import ServiciosApiCustomers from './components/ServiciosApiCustomers';
+// import ServiciosApiSuppliers from './components/ServiciosApiSuppliers';
+// import EmpleadosDepartamento from './components/EmpleadosDepartamento';
+// import EmpleadosOficios from './components/EmpleadosOficios';
+// import Departamento from './components/maestrodetalle/Departamento';
+// import Cursos from './components/ejemplocomunicacion/Cursos';
+import Router from './components/Router';
+import MenuRutas from './components/MenuRutas';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Cursos/>
+  <div>
+    <MenuRutas/>
+    <Router/>
+  </div>
+  // <Cursos/>
   // <Departamento/>
-    // <EmpleadosOficios/>
-    // <ServiciosApiCustomers/>
-    // <ServiciosApiSuppliers/>
-    // <EmpleadosDepartamento/>
-  );
+  // <EmpleadosOficios/>
+  // <ServiciosApiCustomers/>
+  // <ServiciosApiSuppliers/>
+  // <EmpleadosDepartamento/>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
