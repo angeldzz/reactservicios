@@ -6,10 +6,12 @@ import ServiciosApiCustomers from './components/ServiciosApiCustomers';
 import ServiciosApiSuppliers from './components/ServiciosApiSuppliers';
 import EmpleadosDepartamento from './components/EmpleadosDepartamento';
 import EmpleadosOficios from './components/EmpleadosOficios';
+import Departamento from './components/maestrodetalle/Departamento';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <EmpleadosOficios/>
+  <Departamento/>
+    // <EmpleadosOficios/>
     // <ServiciosApiCustomers/>
     // <ServiciosApiSuppliers/>
     // <EmpleadosDepartamento/>
