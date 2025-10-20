@@ -7,6 +7,7 @@ export default class Departamento extends Component {
     selectDepartamento = React.createRef();
     state = {
         departamentos: [],
+        idDepartamento: 0
     }
     loadDepartamentos = () => {
         let request = "webresources/departamentos"
@@ -15,6 +16,13 @@ export default class Departamento extends Component {
             this.setState({
                 departamentos: response.data
             })
+        })
+    }
+    buscarEmpleados = (event) => {
+        event.preventDefault();
+        let idDepartamento = this.selectDepartamento.current.value;
+        this.setState({
+            idDepartamento:idDepartamento
         })
     }
     componentDidMount = () => {
@@ -26,15 +34,21 @@ export default class Departamento extends Component {
         <h1>Departamentos component</h1>
         <form>
             <select ref={this.selectDepartamento}>
+                <option value="0">Selecione Departamento</option>
                 {this.state.departamentos.map((departamento, index) => {
                     return(
-                        <option key={index}>{departamento.nombre}</option>
+                        <option key={index} value={departamento.numero}>{departamento.nombre}</option>
                     )
                 })}
             </select>
+            <button onClick={this.buscarEmpleados}>
+                Buscar Empleados
+            </button>
         </form>
-        <Empleados/>
-        <Empleados/>
+        {
+            this.state.idDepartamento != 0 &&
+            <Empleados iddepartamento={this.state.idDepartamento}/>
+        }
       </div>
     )
   }
