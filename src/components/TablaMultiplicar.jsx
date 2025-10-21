@@ -14,8 +14,10 @@ export default class TablaMultiplicar extends Component {
             tabla: aux
         })
     }
-    componentDidMount = () => {
-        this.generarTablaMultiplicar();
+    componentDidUpdate = (oldProps) => {
+        if(oldProps.numero !== this.props.numero){
+            this.generarTablaMultiplicar();
+        }
     }
   render() {
     return (

@@ -1,0 +1,16 @@
+ Creacion de proyecto
+npx create-react-app nombreProyecto
+---------------------------------------
+ Instalacion de Rutas de react
+npm install --global react-router-dom
+---------------------------------------
+Para usar bootstrap en react debemos instalar bootstrap jquery y popper
+
+npm install --save bootstrap jquery popper.js 
+
+una vez instalado debemos indicar en index.js la ubicacion de las librerias
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import $ from 'jquery'
+import Popper from 'popper.js'
+import 'bootstrap/dist/js/bootstrap.bundle'

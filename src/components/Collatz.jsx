@@ -20,7 +20,12 @@ export default class Collatz extends Component {
             })
         }
     }
-    componentDidMount = () => this.generarCollatz();
+    componentDidUpdate = (oldProps) => {
+        if(oldProps.numCollatz !== this.props.numCollatz){
+        this.generarCollatz()
+        } 
+    }
+
   render() {
     return (
       <div>
