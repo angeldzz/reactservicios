@@ -6,6 +6,7 @@ import TablaMultiplicar from './TablaMultiplicar';
 import Collatz from "./Collatz";
 import { useParams } from "react-router-dom";
 import MenuRutas from './MenuRutas';
+import HospitalesMultiple from './HospitalesMultiple';
 export default class Router extends Component {
   render() {
     function TablaMultiplicarElement () {
@@ -27,6 +28,7 @@ export default class Router extends Component {
         <Route path='/' element={<Home/>}/>
         <Route path='/tabla/:minumero' element={<TablaMultiplicarElement/>}/>
         <Route path='/collatz/:numcollatz' element={<CollatzElement/>}/>
+        <Route path='/hospitales' element={<HospitalesMultiple/>}/>
         {/* Para las rutas que no existen debemos utilizar el * y debe ser siempre la ultima ruta */}
         <Route path='*' element={<NotFound/>}/>
       </Routes>
