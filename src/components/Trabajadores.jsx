@@ -53,8 +53,6 @@ export default class Trabajadores extends Component {
                 <th>Oficio</th>
                 <th>Salario</th>
                 <th>Id Hospital</th>
-                <th></th>
-                <th></th>
               </tr>
             </thead>
             <tbody>
